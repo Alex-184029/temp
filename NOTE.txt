@@ -1,0 +1,73 @@
+													笔记
+
+&进入常用切换路径：
+	cd ~/lph/restful_car3_deploy/plate_webservice2/darknet       # 进入darknet
+	cd ~/lph/restful_car3_deploy/test_demo                       # 进入test_demo
+
+&yolov4官方论文：https://arxiv.org/abs/2004.10934
+
+&MORAN算法官方:
+	论文：https://arxiv.org/abs/1901.03003
+	实现：https://github.com/Canjie-Luo/MORAN_v2
+
+&操作服务命令：（darknet目录下）
+	1.开启服务：./plate_manage.sh start
+	2.关闭服务：./plate_manage.sh stop
+	3.重启服务：./plate_manage.sh restart
+
+&远程管理密码：Poi@86420
+
+&临时改清华源：
+	pip install package -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+&mysql常用命令：（密码123456）
+	1.进入mysql模式：mysql -uroot -p（后续输入密码即可）
+	2.开启服务：service mysql start
+	3.重启服务：service mysql restart
+	4.关闭服务：service mysql stop
+	5.查看端口号：show global variables like 'port';（先进入sql模式）
+
+&conda常见命令：
+	1.创建环境：conda create -n <env_name> python=X.X
+	2.激活环境：activate <env_name>
+	3.退出环境：deactivate
+	4.删除环境：conda remove -n <env_name>
+	5.复制环境：conda create --name <new_n> --clone <old_n>
+	6.查询环境：conda env list 或 codda info --envs
+	7.查询包：conda list
+	8.更新conda：conda update conda
+	9.查看环境详细信息：conda info
+	10.查看镜像源：conda config --show channels
+	11.添加镜像源：conda config --add channels <源链接>
+
+&OpenCV注意：
+	1.安装需要：pip/conda install opencv-python
+	2.OpenCV读取图像通道顺序BGR（需要数组最后一维取反）
+
+&Linux系统清理：
+	1.sudo apt-get autoclean    //清理旧版本的软件缓存
+	2.sudo apt-get clean        //清理所有软件缓存
+	3.sudo apt-get autoremove   //删除系统不再使用的孤立软件
+
+&查看cuda驱动是否合适：
+	import torch
+	torch.cuda.is_available()
+
+&Linux清理命令：
+	sudo apt-get clean
+	sudo apt-get autoclean
+	sudo apt-get autoremove
+	sudo apt-get remove <ruanjian>   //删除
+
+&一些资源：
+	1.病理切片数据集：（camelyon竞赛数据集）
+		https://camelyon16.grand-challenge.org/
+		https://camelyon17.grand-challenge.org/
+	2.图像缩放预处理工具openslide：
+		http://openslide.org/api/python
+		pip install openslide-python
+	3.切片处理工具ASAP：（github网址打不开）
+		https://github.com/GeertLitjens/ASAP/releases
+		截取完成切片的一片区域，xml标注文件转成mask模板图片
+	4.FC-DenseNet模型：
+		https://github.com/SimJeg/FC-DenseNet
